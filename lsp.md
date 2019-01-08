@@ -26,18 +26,18 @@ ISIT-UMR Multimodal Polyp Classification Dataset：数据集包括3类息肉:15�
 Kvasir Landmark and Pathological ClassificationDataset.：数据集共7类，3类为标志物检测(z线、幽门、盲肠)，3类为病理发现(食管炎、息肉和溃疡性结肠炎)，1类为正常结肠黏膜。每个类使用了1000个图像，总共使用了7000个图像。
 
 **网络结构**：
-![png/图1](muti结构.png)
+![图1](png/muti结构.png)
 
 上图中网络输入分为两部分，一部分是RGB信息，另一部分是NBI信息，对于没有NBI信息的数据集，使用风格转换网络将RGB信息转换成NBI
 
 **实验结果**：
 数据集：深度信息+RGB
 
-![png/图2](深度信息+RGB.png)
+![图2](png/深度信息+RGB.png)
 
 数据集：NBI+RGB
 
-![png/图2](NBI+RGB.png)
+![图2](png/NBI+RGB.png)
 
 ## 2018-12-8 ~ 2018-12-19
 
@@ -64,19 +64,19 @@ Kvasir Landmark and Pathological ClassificationDataset.：数据集共7类，3�
 **贡献**：作者提出了一种简单且数据无关的数据增强方式，被称作 mixup 。
 
 mixup通过结合原始数据，使用特征向量的线性插值导致相关标签的线性插值，来扩展训练分布。
-![png/公式](公式1.png)
+![公式](png/公式1.png)
 
 **个人理解**：mixup领域分布可以看作一种的数据增强方式用来增强了模型在训练样本之间的线性表现。因此，它可以很好地对抗噪声样本
-![png/图1](代码1.png)
+![图1](png/代码1.png)
 
 上图显示了mixup 在类与类之间提供了更平滑的过渡线来估计不确定性。
-![png/图2](图1.png)
+![图2](png/图1.png)
 
 上图显示了两个神经网络（using ERM and mixup）在训练CIFAR-10 数据集上的平均表现。两个模型有着同样的结构，使用同样的步骤训练，在同样的训练数据中采样相同的点进行评估。使用mixup训练的模型在训练样本之间的模型预测和梯度模值更加稳定。
 
 **实验效果**
-![png/图3](图2.png)
-![png/图4](图3.png)
+![图3](png/图2.png)
+![图4](png/图3.png)
 
 ## 2018-12-20 ~ 2018-12-26
 ###  **实验**
@@ -85,13 +85,13 @@ mixup通过结合原始数据，使用特征向量的线性插值导致相关标
 IBN-Net在网络中添加了Instance Normalization，Instance Normalization一般应用与风格迁移网络中，它可以提升网络对于风格变化的鲁棒性。
 IBN-Net结构如图所示：
 
-![png/图一](IBN-net结构.png)
+![图一](png/IBN-net结构.png)
 
 网络在ResNet的残差块中，将第一层1\times1卷积层之后的BN操作改为一半通道使用BN，一半通道使用IN。
 ***SE-Net***：
 SE-Net使用SE模块考虑网络特征通道之间的关系。SE模块结构如下图所示：
 
-![png/图二](SENet特征重标定.png)
+![图二](png/SENet特征重标定.png)
 
 首先是 Squeeze 操作，对于一个通道数为c_2的特征，SE模块顺着空间维度来进行特征压缩，将每个二维的特征通道变成一个实数，这个数代表每个通道的全局感受野。
 然后是 Excitation 操作，为每个特征通道生成权重，然后通过乘法逐通道加权到先前的特征上。
@@ -99,7 +99,7 @@ SE-Net使用SE模块考虑网络特征通道之间的关系。SE模块结构如�
 **实验效果**：
 网络模型结构如图：
 
-![png/图三](SE-ibn网络结构.png)
+![图三](png/SE-ibn网络结构.png)
 
 
 | 模型 | 准确率 | 
