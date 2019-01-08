@@ -26,7 +26,7 @@ ISIT-UMR Multimodal Polyp Classification Dataset：数据集包括3类息肉:15�
 Kvasir Landmark and Pathological ClassificationDataset.：数据集共7类，3类为标志物检测(z线、幽门、盲肠)，3类为病理发现(食管炎、息肉和溃疡性结肠炎)，1类为正常结肠黏膜。每个类使用了1000个图像，总共使用了7000个图像。
 
 **网络结构**：
-![png/图1](muti结构.png)
+![图1](png/muti结构.png)
 
 上图中网络输入分为两部分，一部分是RGB信息，另一部分是NBI信息，对于没有NBI信息的数据集，使用风格转换网络将RGB信息转换成NBI
 
