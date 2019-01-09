@@ -118,7 +118,7 @@ SE-Net使用SE模块考虑网络特征通道之间的关系。SE模块结构如�
 |ResNet|92.5%|
 |IBN-net|93.5%|
 |SE-IBN-net|96.7%|
-|我的  |  |
+|我的  | 92.6% |
 
 ### **论文阅读**
 **题目**：Dynamic Channel Pruning:Feature Boosting and Suppression
