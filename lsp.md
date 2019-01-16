@@ -169,8 +169,8 @@ E：它把集合和原始输入都包含进来，从而产生一个新的张量�
 ![网络结构](png/GENet网络结构.png)
 
 实验中，作者共提出两种网络：
-无参数方法$GE-\theta^-$,即池化操作是平均池化。
-有参数方法GE-\theta,即池化操作改为Depthwise Separable Convolution
+无参数方法GE-$\theta^-$,即池化操作是平均池化。
+有参数方法GE-$\theta$,即池化操作改为Depthwise Separable Convolution
 
 结构如图所示：
 
